@@ -14,7 +14,7 @@ public class EmailConfig {
 	private String alternateEmail;
 	private String companySuffix = "OOPScompany.com";
 	
-	//Constructor to receive the first and last name.
+	//Constructor : to receive the first and last name.
 	
 	public EmailConfig(String firstname, String lastname){
 		this.firstname= firstname;
