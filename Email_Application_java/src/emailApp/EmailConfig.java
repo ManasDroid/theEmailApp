@@ -43,13 +43,18 @@ public class EmailConfig {
 		int departmentChoice = in.nextInt();
 		if(departmentChoice == 1) {
 			return "Sales";
+			in.close();
 		}else if(departmentChoice == 2) {
 			return "Development";
+			in.close();
 		}else if(departmentChoice == 3) {
 			return "Accounting";
+			in.close();
 		}else {
 			return "";
+			in.close();
 		}
+		
 		
 	}
 	
@@ -63,7 +68,7 @@ public class EmailConfig {
 			int rand = (int) (Math.random()* passwordSet.length());
 			password[i] = passwordSet.charAt(rand);
 		}
-		return new String (password);
+		return hash.encrypt(new String (password));
 		
 	}
 	
@@ -79,7 +84,7 @@ public class EmailConfig {
 	
 	//Change the password.
 	public void changePassword(String password) {
-		this.password=password;
+		this.password=hash.encrypt(password);
 	}
 	
 	public int getmailboxCapacity() { return mailboxCapacity; }
